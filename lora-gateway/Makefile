@@ -36,6 +36,10 @@ define Package/description
   based on Semtech SX1301 multi-channel modem and SX1257/SX1255 RF transceivers.
 endef
 
+define Package/libloragw/config
+  source "$(SOURCE)/Config.in"
+endef
+
 TARGET_CFLAGS += $(FPIC) -Iinc -std=c99 -I.
 
 define Package/libloragw/install
