@@ -40,7 +40,7 @@ define Package/libloragw/config
   source "$(SOURCE)/Config.in"
 endef
 
-TARGET_CFLAGS += $(FPIC) -Iinc -std=c99 -I.
+TARGET_CFLAGS += $(FPIC) -Iinc -std=c99 -I. -DSPI_DEV_PATH=\\\"\"$(CONFIG_SX1301_SPI_PATH)\\\"\"
 
 define Package/libloragw/install
 endef
