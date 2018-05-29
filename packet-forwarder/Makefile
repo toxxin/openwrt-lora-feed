@@ -56,4 +56,4 @@ define Package/packet-forwarder/install
 	$(INSTALL_DATA) ./files/global_conf.json $(1)/etc/global_conf.json
 endef
 
-$(eval $(call BuildPackage,packet_forwarder))
+$(eval $(call BuildPackage,packet-forwarder))
