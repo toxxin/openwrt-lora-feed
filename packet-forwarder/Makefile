@@ -48,8 +48,8 @@ PACKET_FORWARDER_MAKEOPTS= -C $(PKG_BUILD_DIR) \
 MAKE_FLAGS = GW_PATH="$(PKG_BUILD_DIR)/libloragw"
 
 define Package/packet-forwarder/install
-	$(INSTALL_DIR) $(1)/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/packet-forwarder/lora_pkt_fwd $(1)/usr/sbin/
+	$(INSTALL_DIR) $(1)/usr/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/packet-forwarder/lora_pkt_fwd/lora_pkt_fwd $(1)/usr/sbin/
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/packaet_forwarder.init $(1)/etc/init.d/packet_porwarder
 	$(INSTALL_DIR) $(1)/etc
