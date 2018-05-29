@@ -14,6 +14,7 @@ PKG_RELEASE:=1
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/Lora-net/packet_forwarder
 PKG_SOURCE_VERSION:=d0226eae6e7b6bbaec6117d0d2372bf17819c438
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_CAT:=zcat
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
@@ -39,13 +40,10 @@ define Package/packet-forwarder/description
 endef
 
 TARGET_CFLAGS += $(FPIC) -Iinc -std=c99 -I.
-TARGET_LGW_PATH = $(BUILD_DIR)/libloragw
-EXTRA_CFLAGS += -DLGW_PATH=$(BUILD_DIR)/libloragw
 
-PACKET_FORWARDER_MAKEOPTS= -C $(PKG_BUILD_DIR) \
-	LGW_PATH="$(PKG_BUILD_DIR)/libloragw"
-
-MAKE_FLAGS = GW_PATH="$(PKG_BUILD_DIR)/libloragw"
+MAKE_FLAGS += LGW_PATH="$(BUILD_DIR)/libloragw/libloragw" \
+		CROSS_COMPILE="$(TARGET_CROSS)" \
+		ARCH="$(ARCH)"
 
 define Package/packet-forwarder/install
 	$(INSTALL_DIR) $(1)/usr/sbin
