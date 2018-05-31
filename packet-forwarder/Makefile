@@ -28,7 +28,7 @@ define Package/packet-forwarder
   CATEGORY:=Network
   SUBMENU:=Routing and Redirection
   TITLE:=Lora network packet forwarder
-  DEPENDS:= +libloragw +librt +libm +libpthread
+  DEPENDS:= +librt +libpthread
   URL:=https://github.com/Lora-net
   MAINTAINER:=Anton Glukhov <anton.a.glukhov@gmail.com>
 endef
