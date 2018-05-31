@@ -47,9 +47,9 @@ MAKE_FLAGS += LGW_PATH="$(BUILD_DIR)/libloragw/libloragw" \
 
 define Package/packet-forwarder/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/packet-forwarder/lora_pkt_fwd/lora_pkt_fwd $(1)/usr/sbin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/lora_pkt_fwd/lora_pkt_fwd $(1)/usr/sbin/
 	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) ./files/packaet_forwarder.init $(1)/etc/init.d/packet_porwarder
+	$(INSTALL_BIN) ./files/etc/init.d/lora_pkt_fwd.init $(1)/etc/init.d/lora_pkt_fwd
 	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_DATA) ./files/global_conf.json $(1)/etc/global_conf.json
 endef
