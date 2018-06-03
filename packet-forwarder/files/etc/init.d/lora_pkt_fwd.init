@@ -41,7 +41,7 @@ reset_sx1301_board ()
 
 service_triggers()
 {
-	procd_add_reload_trigger "lora-global"
+	procd_add_reload_trigger "lora"
 }
 
 reload_service()
