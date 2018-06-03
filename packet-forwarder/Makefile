@@ -53,7 +53,7 @@ define Package/packet-forwarder/install
 	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/lora_pkt_fwd/global_conf.json $(1)/etc/global_conf.json
 	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_DATA) ./files/lora.config $(1)/etc/config/lora
+	$(INSTALL_CONF) ./files/lora.config $(1)/etc/config/lora
 endef
 
 $(eval $(call BuildPackage,packet-forwarder))
