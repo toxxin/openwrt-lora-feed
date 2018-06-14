@@ -21,6 +21,9 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 PKG_CONFIG_DEPENDS:=CONFIG_PACKAGE_libloragw
 
+PKG_LICENSE:=
+PKG_LICENSE_FILES:=LICENSE
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/packet-forwarder
